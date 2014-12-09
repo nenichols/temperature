@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Temperature" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,129 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temperature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ui-b3-aDM">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="degree F" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zWw-sI-zOn">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jUw-K0-ReA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jUw-K0-ReA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jUw-K0-ReA"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="degree C" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bxC-aW-oOn">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RGX-mw-IJP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RGX-mw-IJP"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="RGX-mw-IJP"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFb-7F-T4q">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.98950441919999998" green="0.0" blue="0.1690601078" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="125" width="368" height="35"/>
+                                </variation>
+                                <connections>
+                                    <action selector="Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WoD-80-ubU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EFb-7F-T4q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1tU-Ye-DHf"/>
+                            <constraint firstItem="bxC-aW-oOn" firstAttribute="leading" secondItem="EFb-7F-T4q" secondAttribute="leading" id="2fl-HI-eeS"/>
+                            <constraint firstItem="3Ui-b3-aDM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7gk-pp-ghC"/>
+                            <constraint firstItem="bxC-aW-oOn" firstAttribute="top" secondItem="zWw-sI-zOn" secondAttribute="bottom" constant="8" symbolic="YES" id="7yv-Qq-CU8"/>
+                            <constraint firstItem="zWw-sI-zOn" firstAttribute="top" secondItem="3Ui-b3-aDM" secondAttribute="bottom" constant="8" symbolic="YES" id="Dfa-zk-Jw2"/>
+                            <constraint firstItem="EFb-7F-T4q" firstAttribute="top" secondItem="bxC-aW-oOn" secondAttribute="bottom" constant="8" symbolic="YES" id="Jlg-Ey-VhC"/>
+                            <constraint firstItem="zWw-sI-zOn" firstAttribute="leading" secondItem="bxC-aW-oOn" secondAttribute="leading" id="OPJ-p2-KC3"/>
+                            <constraint firstItem="zWw-sI-zOn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UyQ-A8-sfF"/>
+                            <constraint firstItem="bxC-aW-oOn" firstAttribute="trailing" secondItem="zWw-sI-zOn" secondAttribute="trailing" id="dAC-ea-t0Q"/>
+                            <constraint firstItem="bxC-aW-oOn" firstAttribute="trailing" secondItem="EFb-7F-T4q" secondAttribute="trailing" id="owA-7m-jpB"/>
+                            <constraint firstItem="zWw-sI-zOn" firstAttribute="centerX" secondItem="3Ui-b3-aDM" secondAttribute="centerX" id="u8E-iI-C1y"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3Ui-b3-aDM"/>
+                                <exclude reference="zWw-sI-zOn"/>
+                                <exclude reference="bxC-aW-oOn"/>
+                                <exclude reference="EFb-7F-T4q"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Dfa-zk-Jw2"/>
+                                <exclude reference="OPJ-p2-KC3"/>
+                                <exclude reference="UyQ-A8-sfF"/>
+                                <exclude reference="u8E-iI-C1y"/>
+                                <exclude reference="2fl-HI-eeS"/>
+                                <exclude reference="7yv-Qq-CU8"/>
+                                <exclude reference="dAC-ea-t0Q"/>
+                                <exclude reference="owA-7m-jpB"/>
+                                <exclude reference="1tU-Ye-DHf"/>
+                                <exclude reference="Jlg-Ey-VhC"/>
+                                <exclude reference="7gk-pp-ghC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="3Ui-b3-aDM"/>
+                                <include reference="zWw-sI-zOn"/>
+                                <include reference="bxC-aW-oOn"/>
+                                <include reference="EFb-7F-T4q"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Dfa-zk-Jw2"/>
+                                <include reference="OPJ-p2-KC3"/>
+                                <include reference="UyQ-A8-sfF"/>
+                                <include reference="u8E-iI-C1y"/>
+                                <include reference="2fl-HI-eeS"/>
+                                <include reference="7yv-Qq-CU8"/>
+                                <include reference="dAC-ea-t0Q"/>
+                                <include reference="owA-7m-jpB"/>
+                                <include reference="1tU-Ye-DHf"/>
+                                <include reference="Jlg-Ey-VhC"/>
+                                <include reference="7gk-pp-ghC"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="DegreeCTextBox" destination="bxC-aW-oOn" id="uX0-AD-uJU"/>
+                        <outlet property="DegreeFTextBox" destination="zWw-sI-zOn" id="EUd-hS-qFU"/>
+                        <outlet property="temperatureTitleLabel" destination="3Ui-b3-aDM" id="Bbu-qC-bWq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="439.5" y="399"/>
         </scene>
     </scenes>
 </document>
